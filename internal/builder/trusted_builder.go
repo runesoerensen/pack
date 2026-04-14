@@ -31,15 +31,8 @@ var KnownBuilders = []KnownBuilder{
 	},
 	{
 		Vendor:             "Heroku",
-		Image:              "heroku/builder:22",
-		DefaultDescription: "Ubuntu 22.04 AMD64 base image with buildpacks for Go, Java, Node.js, PHP, Python, Ruby & Scala.",
-		Suggested:          false,
-		Trusted:            true,
-	},
-	{
-		Vendor:             "Heroku",
-		Image:              "heroku/builder:20",
-		DefaultDescription: "Ubuntu 20.04 AMD64 base image with buildpacks for Go, Java, Node.js, PHP, Python, Ruby & Scala.",
+		Image:              "heroku/builder",
+		DefaultDescription: "Ubuntu base image with buildpacks for Go, Java, Node.js, PHP, Python, Ruby & Scala.",
 		Suggested:          false,
 		Trusted:            true,
 	},
