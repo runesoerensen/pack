@@ -115,8 +115,23 @@ func IsTrustedBuilder(cfg config.Config, builderName string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
+
+	var trustedBuilderNames []string
+
+	// Add known trusted builders
+	for _, knownBuilder := range KnownBuilders {
+		if knownBuilder.Trusted {
+			trustedBuilderNames = append(trustedBuilderNames, knownBuilder.Image)
+		}
+	}
+
+	// Add user-configured trusted builders
 	for _, trustedBuilder := range cfg.TrustedBuilders {
-		trustedBuilderReference, err := name.ParseReference(trustedBuilder.Name, name.WithDefaultTag(""))
+		trustedBuilderNames = append(trustedBuilderNames, trustedBuilder.Name)
+	}
+
+	for _, trustedBuilderName := range trustedBuilderNames {
+		trustedBuilderReference, err := name.ParseReference(trustedBuilderName, name.WithDefaultTag(""))
 		if err != nil {
 			return false, err
 		}
