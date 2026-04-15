@@ -11,9 +11,7 @@ import (
 // TrustedBuilders is a flat list of builder image names that are trusted by default.
 var TrustedBuilders = []string{
 	"gcr.io/buildpacks/builder:google-22",
-	"heroku/builder:24",
-	"heroku/builder:22",
-	"heroku/builder:20",
+	"heroku/builder",
 	"paketobuildpacks/builder-jammy-base",
 	"paketobuildpacks/builder-jammy-full",
 	"paketobuildpacks/builder-jammy-tiny",

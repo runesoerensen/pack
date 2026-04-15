@@ -126,7 +126,7 @@ func testBuildCommand(t *testing.T, when spec.G, it spec.S) {
 				})
 			})
 
-			when("the builder is known to be trusted but not suggested", func() {
+			when("the builder is known to be trusted by repository", func() {
 				it("sets the trust builder option", func() {
 					mockClient.EXPECT().
 						Build(gomock.Any(), EqBuildOptionsWithTrustedBuilder(true)).
